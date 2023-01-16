@@ -1,9 +1,10 @@
 package com.example;
 
-public class App 
+public class Main 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        BankingAccount banking = new BankingAccount(100);
+        System.out.println(banking.getBalance());
     }
 }
