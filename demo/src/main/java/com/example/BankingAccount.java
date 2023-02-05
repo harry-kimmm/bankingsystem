@@ -4,24 +4,19 @@ abstract class BankingAccount implements Account{
     private String owner;
     private double balance;
 
-    public BankingAccount(){
-        this.balance = 0;
-        this.owner = null;
-    }
-
     public BankingAccount(double bal){
         this.balance = bal;
     }
 
     public BankingAccount(String own){
         this.owner = own;
-    } 
+    }
 
     public BankingAccount(double bal, String own){
         this.balance = bal;
         this.owner = own;
-    } 
-
+    }
+    
     public double deposit(double amt){
         this.balance += amt; 
         return this.balance;
@@ -35,5 +30,13 @@ abstract class BankingAccount implements Account{
 
     public double getBalance(){
         return this.balance;
+    }
+
+    public void setOwner(String own){
+        this.owner = own;
+    }   
+
+    public String getOwner(){
+        return this.owner;
     }
 }
