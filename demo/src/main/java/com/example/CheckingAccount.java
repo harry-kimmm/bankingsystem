@@ -1,8 +1,14 @@
 package com.example;
 
 public class CheckingAccount extends BankingAccount{
-    public double withdraw(double amt){
-        super.setBalance(super.getBalance()-amt);
-        return super.getBalance();
+
+    public CheckingAccount(double balance, String owner) {
+        super(balance, owner);
     }
+
+    public double withdraw(double amt){
+        this.setBalance(this.getBalance()-amt);
+        return this.getBalance();
+    }
+
 }

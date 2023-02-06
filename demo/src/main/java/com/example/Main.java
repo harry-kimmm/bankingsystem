@@ -4,7 +4,11 @@ public class Main
 {
     public static void main( String[] args )
     {
-        BankingAccount banking = new BankingAccount(100);
-        System.out.println(banking.getBalance());
+        CheckingAccount checkacc = new CheckingAccount(100.0, "harry");
+        checkacc.deposit(50);
+        System.out.println(checkacc.getBalance());
+        checkacc.withdraw(21);
+        System.out.println(checkacc.getBalance());
+
     }
 }

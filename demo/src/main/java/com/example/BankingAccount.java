@@ -4,14 +4,6 @@ abstract class BankingAccount implements Account{
     private String owner;
     private double balance;
 
-    public BankingAccount(double bal){
-        this.balance = bal;
-    }
-
-    public BankingAccount(String own){
-        this.owner = own;
-    }
-
     public BankingAccount(double bal, String own){
         this.balance = bal;
         this.owner = own;
