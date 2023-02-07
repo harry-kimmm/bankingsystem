@@ -5,13 +5,13 @@ public class SavingsAccount extends BankingAccount {
 
     public SavingsAccount(double balance, String owner, int remainingWithdraws) {
         super(balance, owner);
-        numWithdrawRemaining = remainingWithdraws;
+        this.numWithdrawRemaining = remainingWithdraws;
     }
 
     public double withdraw(double amt) {
-        if (numWithdrawRemaining > 0) {
+        if (this.numWithdrawRemaining > 0) {
             this.setBalance(this.getBalance() - amt);
-            numWithdrawRemaining -= 1;
+            this.numWithdrawRemaining -= 1;
             return this.getBalance();
         } else {
             System.out.println("You do not have any withdraws remaining!");
