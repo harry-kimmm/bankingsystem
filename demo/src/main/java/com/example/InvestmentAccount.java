@@ -23,4 +23,14 @@ public class InvestmentAccount implements Account {
         return this.balance;
     }
 
+    public double getBalanceOnYear(double principalBal, int yearsInFuture, double percentReturn) {
+        System.out.println(percentReturn);
+        if (yearsInFuture == 0) {
+            return principalBal;
+        } else {
+            System.out.println(principalBal);
+            return getBalanceOnYear(principalBal * percentReturn, yearsInFuture - 1, percentReturn);
+        }
+    }
+
 }
