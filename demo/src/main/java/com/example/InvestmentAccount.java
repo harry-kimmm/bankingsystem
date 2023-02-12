@@ -3,9 +3,10 @@ package com.example;
 import java.util.ArrayList;
 
 public class InvestmentAccount implements Account {
-    ArrayList<String> beneficiaries = new ArrayList<>();
-    double balance;
-    String owner;
+    private ArrayList<String> beneficiaries = new ArrayList<>();
+    private double balance;
+    private String owner;
+    private double percentNum;
 
     public InvestmentAccount(double bal, String own, ArrayList<String> ben) {
         this.balance = bal;
@@ -24,12 +25,13 @@ public class InvestmentAccount implements Account {
     }
 
     public double getBalanceOnYear(double principalBal, int yearsInFuture, double percentReturn) {
-        System.out.println(percentReturn);
+        percentNum = (percentReturn / 100) + 1;
+        System.out.println(percentNum);
         if (yearsInFuture == 0) {
             return principalBal;
         } else {
             System.out.println(principalBal);
-            return getBalanceOnYear(principalBal * percentReturn, yearsInFuture - 1, percentReturn);
+            return getBalanceOnYear(principalBal * percentNum, yearsInFuture - 1, percentReturn);
         }
     }
 
