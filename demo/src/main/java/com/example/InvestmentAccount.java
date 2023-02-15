@@ -1,12 +1,16 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class InvestmentAccount implements Account {
     private ArrayList<String> beneficiaries = new ArrayList<>();
     private double balance;
     private String owner;
     private double percentNum;
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public InvestmentAccount(double bal, String own, ArrayList<String> ben) {
         this.balance = bal;
@@ -26,11 +30,10 @@ public class InvestmentAccount implements Account {
 
     public double getBalanceOnYear(double principalBal, int yearsInFuture, double percentReturn) {
         percentNum = (percentReturn / 100) + 1;
-        System.out.println(percentNum);
         if (yearsInFuture == 0) {
+            System.out.println(df.format(principalBal));
             return principalBal;
         } else {
-            System.out.println(principalBal);
             return getBalanceOnYear(principalBal * percentNum, yearsInFuture - 1, percentReturn);
         }
     }
